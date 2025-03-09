@@ -104,7 +104,7 @@
 
         $xmlstr = '<item>
             <link>' . $url . '</link>
-            <title>' . $title . '</title>
+            <title>' . htmlspecialchars($title) . '</title>
 
             <guid isPermaLink="true">' . $url .'</guid>
             <description>'
@@ -113,7 +113,6 @@
             <author>' . $author . '</author>
             <pubDate>' . $pub_date . '</pubDate>
         </item>';
-
         return new SimpleXMLElement($xmlstr);
     }
 
