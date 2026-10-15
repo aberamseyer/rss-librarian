@@ -1,0 +1,10 @@
+services:
+  rss-librarian:
+    build: .
+    container_name: rss-librarian
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8091:80"
+    volumes:
+      # owned by www-data (uid 33) on the host
+      - ./feeds:/var/www/html/feeds
